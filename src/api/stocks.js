@@ -1,4 +1,4 @@
-export default stocks = [
+const stocks = [
   {
     symbol: 'AAPL',
     companyName: 'Apple Inc',
@@ -1300,3 +1300,5 @@ export default stocks = [
     exchangeShortName: 'NASDAQ',
   },
 ];
+
+export default stocks;

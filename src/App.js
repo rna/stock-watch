@@ -1,10 +1,10 @@
 import React from 'react';
-import StockComponent from './StockComponent';
+import HomePageContainer from './containers/HomePageContainer';
 
 function App() {
   return (
     <div>
-      <StockComponent />
+      <HomePageContainer />
     </div>
   );
 }

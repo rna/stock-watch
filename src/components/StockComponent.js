@@ -1,7 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const StockComponent = () => (
-  <p>Stock Component</p>
+const StockComponent = ({ stock }) => (
+  <tr>
+    <td>{stock.symbol}</td>
+    <td>{stock.companyName}</td>
+    <td>{stock.price}</td>
+    <td>{stock.marketCap}</td>
+  </tr>
 );
+
+StockComponent.propTypes = {
+  stock: PropTypes.shape({
+    symbol: PropTypes.string.isRequired,
+    companyName: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    marketCap: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default StockComponent;
