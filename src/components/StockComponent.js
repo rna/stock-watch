@@ -6,7 +6,7 @@ const StockComponent = ({ stock }) => (
     <td>{stock.symbol}</td>
     <td>{stock.companyName}</td>
     <td>{stock.price}</td>
-    <td>{stock.marketCap}</td>
+    <td>{(stock.marketCap / 1000000000).toFixed(2)}</td>
   </tr>
 );
 
