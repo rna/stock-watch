@@ -14,8 +14,8 @@ StockComponent.propTypes = {
   stock: PropTypes.shape({
     symbol: PropTypes.string.isRequired,
     companyName: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    marketCap: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    marketCap: PropTypes.number.isRequired,
   }).isRequired,
 };
 

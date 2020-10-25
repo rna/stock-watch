@@ -21,7 +21,7 @@ const HomePageContainer = ({ stocks, showStocks }) => {
       </thead>
       <tbody>
         {stocks.map(s => (
-          <StockComponent key={s.symbol} stock={s} />
+          <StockComponent key={stocks.indexOf(s)} stock={s} />
         ))}
       </tbody>
     </table>
@@ -37,7 +37,7 @@ const mapDispatchToProps = {
 };
 
 HomePageContainer.propTypes = {
-  stocks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  stocks: PropTypes.instanceOf(Array).isRequired,
   showStocks: PropTypes.func.isRequired,
 };
 
