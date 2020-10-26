@@ -1,8 +1,11 @@
 import stocks from '../api/stocks';
 
-const showStocks = () => ({
+export const showStocks = () => ({
   type: 'SHOW_STOCKS',
   payload: stocks,
 });
 
-export default showStocks;
+export const searchStock = value => ({
+  type: 'SEARCH_STOCK',
+  payload: value,
+});
