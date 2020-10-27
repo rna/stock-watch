@@ -1,7 +1,7 @@
 import stocks from '../api/stocks';
 
-export const showStocks = () => ({
-  type: 'SHOW_STOCKS',
+export const fetchStocks = () => ({
+  type: 'FETCH_STOCKS',
   payload: stocks,
 });
 

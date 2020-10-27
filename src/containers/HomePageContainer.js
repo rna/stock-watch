@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import StockComponent from '../components/StockComponent';
-import { showStocks, searchStock } from '../actions/index';
+import { fetchStocks, searchStock } from '../actions/index';
 import SearchComponent from '../components/SearchComponent';
 
 const HomePageContainer = ({
-  stocks, showStocks, searchStock, search,
+  stocks, fetchStocks, searchStock, search,
 }) => {
   useEffect(() => {
-    showStocks();
-  }, []);
+    fetchStocks();
+  }, [fetchStocks]);
 
   let filteredStocks = stocks;
   if (search === '') {
@@ -46,18 +46,18 @@ const HomePageContainer = ({
 };
 
 const mapStateToProps = state => ({
-  stocks: state.stocks,
+  stocks: state.stocks.stocks,
   search: state.search,
 });
 
 const mapDispatchToProps = {
-  showStocks,
+  fetchStocks,
   searchStock,
 };
 
 HomePageContainer.propTypes = {
   stocks: PropTypes.instanceOf(Array).isRequired,
-  showStocks: PropTypes.func.isRequired,
+  fetchStocks: PropTypes.func.isRequired,
   searchStock: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
 };

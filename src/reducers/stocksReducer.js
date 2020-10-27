@@ -1,7 +1,11 @@
-const stocks = (state = [], action) => {
+const initialState = {
+  stocks: [],
+};
+
+const stocks = (state = initialState, action) => {
   switch (action.type) {
-    case 'SHOW_STOCKS':
-      return [...state, action.payload];
+    case 'FETCH_STOCKS':
+      return { ...state, stocks: action.payload };
     default:
       return state;
   }
