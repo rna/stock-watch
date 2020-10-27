@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import StockComponent from '../components/StockComponent';
-import { fetchStocks, searchStock } from '../actions/index';
+import { fetchStocks, searchStock, deleteStock } from '../actions/index';
 import SearchComponent from '../components/SearchComponent';
 
 const HomePageContainer = ({
-  stocks, fetchStocks, searchStock, search,
+  stocks, fetchStocks, searchStock, search, deleteStock,
 }) => {
   useEffect(() => {
     fetchStocks();
@@ -23,6 +23,10 @@ const HomePageContainer = ({
     searchStock(e.target.value);
   };
 
+  const handleDelete = stock => {
+    deleteStock(stock);
+  };
+
   return (
     <div>
       <SearchComponent value={search} handleSearch={handleSearch} />
@@ -37,7 +41,7 @@ const HomePageContainer = ({
         </thead>
         <tbody>
           {filteredStocks.map(s => (
-            <StockComponent key={filteredStocks.indexOf(s)} stock={s} />
+            <StockComponent key={filteredStocks.indexOf(s)} stock={s} handleDelete={handleDelete} />
           ))}
         </tbody>
       </table>
@@ -53,6 +57,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchStocks,
   searchStock,
+  deleteStock,
 };
 
 HomePageContainer.propTypes = {
@@ -60,6 +65,7 @@ HomePageContainer.propTypes = {
   fetchStocks: PropTypes.func.isRequired,
   searchStock: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
+  deleteStock: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePageContainer);
