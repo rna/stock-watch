@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const StockComponent = ({ stock, handleDelete }) => (
   <tr>
-    <td>{stock.symbol}</td>
+    <td><Link to={`/stock/${stock.symbol}`}>{stock.symbol}</Link></td>
     <td>{stock.companyName}</td>
     <td>{stock.price}</td>
     <td>{(stock.marketCap / 1000000000).toFixed(2)}</td>
