@@ -8,7 +8,6 @@ const SearchComponent = ({ value, handleSearch }) => (
       onChange={handleSearch}
       value={value}
     />
-    <h1>{value}</h1>
   </div>
 );
 

@@ -16,7 +16,7 @@ const HomePageContainer = ({
   if (search === '') {
     filteredStocks = stocks;
   } else {
-    filteredStocks = stocks.filter(el => (el.companyName).includes(search));
+    filteredStocks = stocks.filter(e => e.companyName.toLowerCase().includes(search.toLowerCase()));
   }
 
   const handleSearch = e => {
