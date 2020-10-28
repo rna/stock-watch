@@ -4,20 +4,34 @@ import PropTypes from 'prop-types';
 import StockInfoComponent from '../components/StockInfoComponent';
 import NewsComponent from '../components/NewsComponent';
 import CompanyInfoComponent from '../components/CompanyInfoComponent';
-import { fetchStockInfo } from '../actions/index';
-import demoStockNews from '../api/demoStockNews';
+import { fetchStockInfo, fetchStockNews } from '../actions/index';
 import demoCompanyInfo from '../api/demoCompanyInfo';
 
-const StockPageContainer = ({ stockInfo, fetchStockInfo }) => {
+const StockPageContainer = ({
+  stockInfo,
+  fetchStockInfo,
+  stockNews,
+  fetchStockNews,
+}) => {
   useEffect(() => {
     fetchStockInfo();
+    fetchStockNews();
   }, []);
 
   let customStockInfoComponent;
+  let customStockNewsComponent;
   if (stockInfo) {
     customStockInfoComponent = <StockInfoComponent stockInfo={stockInfo[0]} />;
   } else {
     customStockInfoComponent = null;
+  }
+
+  if (stockNews) {
+    customStockNewsComponent = stockNews.map(news => (
+      <NewsComponent key={stockNews.indexOf(news)} news={news} />
+    ));
+  } else {
+    customStockNewsComponent = null;
   }
 
   return (
@@ -32,9 +46,7 @@ const StockPageContainer = ({ stockInfo, fetchStockInfo }) => {
         {customStockInfoComponent}
       </table>
       <div>
-        {demoStockNews.map(news => (
-          <NewsComponent key={demoStockNews.indexOf(news)} news={news} />
-        ))}
+        {customStockNewsComponent}
       </div>
     </div>
   );
@@ -42,15 +54,19 @@ const StockPageContainer = ({ stockInfo, fetchStockInfo }) => {
 
 const mapStateToProps = state => ({
   stockInfo: state.stockDetail.stockInfo,
+  stockNews: state.stockDetail.stockNews,
 });
 
 const mapDispatchToProps = {
   fetchStockInfo,
+  fetchStockNews,
 };
 
 StockPageContainer.propTypes = {
   stockInfo: PropTypes.instanceOf(Array).isRequired,
   fetchStockInfo: PropTypes.func.isRequired,
+  stockNews: PropTypes.instanceOf(Array).isRequired,
+  fetchStockNews: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockPageContainer);
