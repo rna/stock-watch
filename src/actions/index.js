@@ -1,6 +1,7 @@
 import demoStocks from '../api/demoStocks';
 import demoStockInfo from '../api/demoStockInfo';
 import demoStockNews from '../api/demoStockNews';
+import demoCompanyInfo from '../api/demoCompanyInfo';
 
 export const fetchStocks = () => ({
   type: 'FETCH_STOCKS',
@@ -25,4 +26,9 @@ export const fetchStockInfo = () => ({
 export const fetchStockNews = () => ({
   type: 'FETCH_STOCK_NEWS',
   payload: demoStockNews,
+});
+
+export const fetchCompanyInfo = () => ({
+  type: 'FETCH_COMPANY_INFO',
+  payload: demoCompanyInfo,
 });

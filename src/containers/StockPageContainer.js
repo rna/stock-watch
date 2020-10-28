@@ -4,22 +4,25 @@ import PropTypes from 'prop-types';
 import StockInfoComponent from '../components/StockInfoComponent';
 import NewsComponent from '../components/NewsComponent';
 import CompanyInfoComponent from '../components/CompanyInfoComponent';
-import { fetchStockInfo, fetchStockNews } from '../actions/index';
-import demoCompanyInfo from '../api/demoCompanyInfo';
+import { fetchStockInfo, fetchStockNews, fetchCompanyInfo } from '../actions/index';
 
 const StockPageContainer = ({
   stockInfo,
   fetchStockInfo,
   stockNews,
   fetchStockNews,
+  companyInfo,
+  fetchCompanyInfo,
 }) => {
   useEffect(() => {
     fetchStockInfo();
     fetchStockNews();
+    fetchCompanyInfo();
   }, []);
 
   let customStockInfoComponent;
   let customStockNewsComponent;
+  let customCompanyInfoComponent;
   if (stockInfo) {
     customStockInfoComponent = <StockInfoComponent stockInfo={stockInfo[0]} />;
   } else {
@@ -34,9 +37,15 @@ const StockPageContainer = ({
     customStockNewsComponent = null;
   }
 
+  if (companyInfo) {
+    customCompanyInfoComponent = <CompanyInfoComponent profile={companyInfo[0]} />;
+  } else {
+    customCompanyInfoComponent = null;
+  }
+
   return (
     <div>
-      <CompanyInfoComponent profile={demoCompanyInfo[0]} />
+      {customCompanyInfoComponent}
       <table>
         <thead>
           <tr>
@@ -55,11 +64,13 @@ const StockPageContainer = ({
 const mapStateToProps = state => ({
   stockInfo: state.stockDetail.stockInfo,
   stockNews: state.stockDetail.stockNews,
+  companyInfo: state.stockDetail.companyInfo,
 });
 
 const mapDispatchToProps = {
   fetchStockInfo,
   fetchStockNews,
+  fetchCompanyInfo,
 };
 
 StockPageContainer.propTypes = {
@@ -67,6 +78,8 @@ StockPageContainer.propTypes = {
   fetchStockInfo: PropTypes.func.isRequired,
   stockNews: PropTypes.instanceOf(Array).isRequired,
   fetchStockNews: PropTypes.func.isRequired,
+  companyInfo: PropTypes.instanceOf(Array).isRequired,
+  fetchCompanyInfo: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockPageContainer);

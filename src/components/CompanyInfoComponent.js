@@ -2,51 +2,55 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CompanyInfoComponent = ({ profile }) => (
-  <tbody>
-    <tr>
-      <td><img src={profile.image} alt={profile.symbol} /></td>
-      <td>{profile.companyName}</td>
-    </tr>
-    <tr>
-      <td>Description</td>
-      <td>{profile.description}</td>
-    </tr>
-    <tr>
-      <td>CEO</td>
-      <td>{profile.ceo}</td>
-    </tr>
-    <tr>
-      <td>Industry</td>
-      <td>{profile.industry}</td>
-    </tr>
-    <tr>
-      <td>Website</td>
-      <td>{profile.website}</td>
-    </tr>
-    <tr>
-      <td>Full-time Employees</td>
-      <td>{profile.fullTimeEmployees}</td>
-    </tr>
-    <tr>
-      <td>Address</td>
-      <td>
-        {profile.address}
-        ,
-        {' '}
-        {profile.city}
-        ,
-        {' '}
-        {profile.state}
-        ,
-        {' '}
-        {profile.country}
-      </td>
-    </tr>
-    <tr>
-      <td>Trade Exchange</td>
-      <td>{profile.exchange}</td>
-    </tr>
-  </tbody>
+  <table>
+    <thead>
+      <th>
+        <td><img src={profile.image} alt={profile.symbol} /></td>
+        <td>{profile.companyName}</td>
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Description</td>
+        <td>{profile.description}</td>
+      </tr>
+      <tr>
+        <td>CEO</td>
+        <td>{profile.ceo}</td>
+      </tr>
+      <tr>
+        <td>Industry</td>
+        <td>{profile.industry}</td>
+      </tr>
+      <tr>
+        <td>Website</td>
+        <td>{profile.website}</td>
+      </tr>
+      <tr>
+        <td>Full-time Employees</td>
+        <td>{profile.fullTimeEmployees}</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>
+          {profile.address}
+          ,
+          {' '}
+          {profile.city}
+          ,
+          {' '}
+          {profile.state}
+          ,
+          {' '}
+          {profile.country}
+        </td>
+      </tr>
+      <tr>
+        <td>Trade Exchange</td>
+        <td>{profile.exchange}</td>
+      </tr>
+    </tbody>
+  </table>
 );
 
 CompanyInfoComponent.propTypes = {
