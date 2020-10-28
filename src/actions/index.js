@@ -1,4 +1,4 @@
-import stocks from '../api/stocks';
+import stocks from '../api/demoStocks';
 
 export const fetchStocks = () => ({
   type: 'FETCH_STOCKS',

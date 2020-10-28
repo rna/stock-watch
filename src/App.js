@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import HomePageContainer from './containers/HomePageContainer';
-import StockDetailContainer from './containers/StockDetailContainer';
+import StockPageContainer from './containers/StockPageContainer';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <HomePageContainer />
       </Route>
       <Route path="/stock/:symbol">
-        <StockDetailContainer />
+        <StockPageContainer />
       </Route>
     </Switch>
   );
