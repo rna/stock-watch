@@ -1,8 +1,9 @@
-import stocks from '../api/demoStocks';
+import demoStocks from '../api/demoStocks';
+import demoStockInfo from '../api/demoStockInfo';
 
 export const fetchStocks = () => ({
   type: 'FETCH_STOCKS',
-  payload: stocks,
+  payload: demoStocks,
 });
 
 export const searchStock = value => ({
@@ -13,4 +14,9 @@ export const searchStock = value => ({
 export const deleteStock = stock => ({
   type: 'DELETE_STOCK',
   symbol: stock.symbol,
+});
+
+export const fetchStockInfo = () => ({
+  type: 'FETCH_STOCK_INFO',
+  payload: demoStockInfo,
 });
