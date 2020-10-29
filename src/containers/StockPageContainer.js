@@ -44,17 +44,19 @@ const StockPageContainer = ({
   }
 
   return (
-    <div>
-      {customCompanyInfoComponent}
-      <table>
-        <thead>
-          <tr>
-            <th colSpan="5">Statistics</th>
-          </tr>
-        </thead>
-        {customStockInfoComponent}
-      </table>
-      <div>
+    <div className="sub-container">
+      <div className="left-sub-container">
+        {customCompanyInfoComponent}
+        <table>
+          <thead>
+            <tr>
+              <th colSpan="5">Statistics</th>
+            </tr>
+          </thead>
+          {customStockInfoComponent}
+        </table>
+      </div>
+      <div className="right-sub-container">
         {customStockNewsComponent}
       </div>
     </div>

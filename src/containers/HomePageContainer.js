@@ -12,11 +12,11 @@ const HomePageContainer = ({
     fetchStocks();
   }, [fetchStocks]);
 
-  let filteredStocks = stocks;
+  let filtered = stocks;
   if (search === '') {
-    filteredStocks = stocks;
+    filtered = stocks;
   } else {
-    filteredStocks = stocks.filter(e => e.companyName.toLowerCase().includes(search.toLowerCase()));
+    filtered = stocks.filter(e => e.companyName.toLowerCase().includes(search.toLowerCase()));
   }
 
   const handleSearch = e => {
@@ -28,24 +28,29 @@ const HomePageContainer = ({
   };
 
   return (
-    <div>
-      <SearchComponent value={search} handleSearch={handleSearch} />
-      <table className="stock-list">
-        <thead>
-          <tr>
-            <th>SYMBOL</th>
-            <th>COMPANY NAME</th>
-            <th>PRICE (USD)</th>
-            <th>MARKET CAP.(Billions)</th>
-            <th>Action(s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredStocks.map(s => (
-            <StockComponent key={filteredStocks.indexOf(s)} stock={s} handleDelete={handleDelete} />
-          ))}
-        </tbody>
-      </table>
+    <div className="sub-container">
+      <div className="left-sub-container">
+        <SearchComponent value={search} handleSearch={handleSearch} />
+        <table className="stock-list">
+          <thead>
+            <tr>
+              <th>SYMBOL</th>
+              <th>COMPANY NAME</th>
+              <th>PRICE (USD)</th>
+              <th>MARKET CAP.(Billions)</th>
+              <th>Action(s)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map(s => (
+              <StockComponent key={filtered.indexOf(s)} stock={s} handleDelete={handleDelete} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="right-sub-container">
+        <h1>News Section</h1>
+      </div>
     </div>
   );
 };
