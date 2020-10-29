@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import trashIcon from '../images/trash_16x16.png';
 
 const StockComponent = ({ stock, handleDelete }) => (
   <tr>
@@ -8,7 +9,7 @@ const StockComponent = ({ stock, handleDelete }) => (
     <td>{stock.companyName}</td>
     <td>{stock.price}</td>
     <td>{(stock.marketCap / 1000000000).toFixed(2)}</td>
-    <td><button type="button" onClick={() => handleDelete(stock)}>X</button></td>
+    <td><button type="button" onClick={() => handleDelete(stock)}><img src={trashIcon} alt="trash button" /></button></td>
   </tr>
 );
 
