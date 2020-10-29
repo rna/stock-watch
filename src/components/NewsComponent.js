@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NewsComponent = ({ news }) => (
-  <div>
+  <div className="news-item">
     <a href={news.url} target="_blank" rel="noreferrer">
       <img src={news.image} alt={news.symbol} />
     </a>
@@ -10,7 +10,11 @@ const NewsComponent = ({ news }) => (
       <a href={news.url} target="_blank" rel="noreferrer">
         <h4>{news.title}</h4>
       </a>
-      <p>{news.site}</p>
+      <p>
+        Source:
+        { }
+        {news.site}
+      </p>
     </div>
   </div>
 );

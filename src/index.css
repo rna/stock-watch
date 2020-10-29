@@ -17,6 +17,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Stock List Table styles*/
+
 .stock-list {
   border-collapse: collapse;
 }
@@ -41,6 +43,8 @@ html {
 .stock-list tr:hover {
   background-color: #ddd;
 }
+
+/* Application section styles */
 
 .main-container {
   width: 100%;
@@ -76,6 +80,8 @@ html {
   float: right;
 }
 
+/* Search Bar Styles */
+
 .search-wrapper {
   position: relative;
   display: flex;
@@ -108,4 +114,29 @@ input {
 .search-input:focus {
   border: 1px solid #009688;
   background-color: white;
+}
+
+/* News Item styles */
+
+.news-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-item img {
+  width: 150px;
+  height: auto;
+  padding-right: 10px;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.news-item p {
+  font-size: 14px;
+  font-weight: bold;
+  color: grey;
 }
