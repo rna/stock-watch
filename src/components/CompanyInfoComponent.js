@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CompanyInfoComponent = ({ profile }) => (
-  <table>
+  <table className="company-profile">
     <thead>
-      <th>
-        <td><img src={profile.image} alt={profile.symbol} /></td>
-        <td>{profile.companyName}</td>
-      </th>
+      <tr>
+        <th><img src={profile.image} alt={profile.symbol} /></th>
+        <th>{profile.companyName}</th>
+      </tr>
     </thead>
     <tbody>
       <tr>

@@ -140,3 +140,20 @@ input {
   font-weight: bold;
   color: grey;
 }
+
+/* Company Profile */
+
+.company-profile {
+  padding-right: 10px;
+}
+
+.company-profile td {
+  text-align: justify;
+}
+
+.company-profile td:nth-child(odd) {
+  font-weight: bold;
+}
+
+/* Stock Statistics */
+
