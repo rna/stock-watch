@@ -17,6 +17,31 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* News Item styles */
+
+.news-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-item img {
+  width: 150px;
+  height: auto;
+  padding-right: 10px;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.news-item p {
+  font-size: 14px;
+  font-weight: bold;
+  color: grey;
+}
+
 /* Stock Info Styles */
 
 .stock-info {
@@ -41,6 +66,8 @@ html {
 .stock-info th {
   padding: 10px 0;
   font-size: 22px;
+  background-color: #5ac58e;
+  color: white;
 }
 
 .stock-info tr {
@@ -57,6 +84,7 @@ html {
 
 .stock-list {
   border-collapse: collapse;
+  margin: 10px;
 }
 
 .stock-list td,
@@ -91,6 +119,26 @@ html {
   width: 20%;
   height: 100%;
   float: left;
+  position: fixed;
+  background-color: whitesmoke;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: gray;
+  display: block;
+}
+
+.sidenav a:nth-child(2) {
+  background-color: #5ac58e;
+  color: white;
 }
 
 .right-container {
@@ -105,9 +153,10 @@ html {
 }
 
 .left-sub-container {
-  width: 60%;
+  width: 58%;
   height: 100%;
   float: left;
+  margin: 10px;
 }
 
 .right-sub-container {
@@ -150,31 +199,6 @@ input {
 .search-input:focus {
   border: 1px solid #009688;
   background-color: white;
-}
-
-/* News Item styles */
-
-.news-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.news-item img {
-  width: 150px;
-  height: auto;
-  padding-right: 10px;
-}
-
-.news-item a {
-  text-decoration: none;
-  color: black;
-}
-
-.news-item p {
-  font-size: 14px;
-  font-weight: bold;
-  color: grey;
 }
 
 /* Company Profile */
