@@ -2,56 +2,98 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const StockInfoComponent = ({ stockInfo }) => (
-  <tbody>
-    <tr>
-      <td>
-        <div>OPEN</div>
-        <div>{stockInfo.open}</div>
-      </td>
-      <td>
-        <div>HIGH</div>
-        <div>{stockInfo.dayHigh}</div>
-      </td>
-      <td>
-        <div>LOW</div>
-        <div>{stockInfo.dayLow}</div>
-      </td>
-      <td>
-        <div>52WK HIGH</div>
-        <div>{stockInfo.yearHigh}</div>
-      </td>
-      <td>
-        <div>52WK LOW</div>
-        <div>{stockInfo.yearLow}</div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div>VOLUME</div>
-        <div>{stockInfo.volume}</div>
-      </td>
-      <td>
-        <div>AVG. VOLUME</div>
-        <div>{stockInfo.avgVolume}</div>
-      </td>
-      <td>
-        <div>MARKET CAP.</div>
-        <div>{stockInfo.marketCap}</div>
-      </td>
-      <td>
-        <div>P/E RATIO</div>
-        <div>{stockInfo.pe}</div>
-      </td>
-      <td>
-        <div>PREV. CLOSE</div>
-        <div>{stockInfo.previousClose}</div>
-      </td>
-    </tr>
-  </tbody>
+  <div className="stock-info">
+    <table>
+      <thead>
+        <tr>
+          <th colSpan="5">
+            Statistics (
+            {stockInfo.symbol}
+            )
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div>OPEN</div>
+            <div>
+              &#36;
+              {stockInfo.open.toFixed(2)}
+            </div>
+          </td>
+          <td>
+            <div>HIGH</div>
+            <div>
+              &#36;
+              {stockInfo.dayHigh.toFixed(2)}
+            </div>
+          </td>
+          <td>
+            <div>LOW</div>
+            <div>
+              &#36;
+              {stockInfo.dayLow.toFixed(2)}
+            </div>
+          </td>
+          <td>
+            <div>52WK HIGH</div>
+            <div>
+              &#36;
+              {stockInfo.yearHigh.toFixed(2)}
+            </div>
+          </td>
+          <td>
+            <div>52WK LOW</div>
+            <div>
+              &#36;
+              {stockInfo.yearLow.toFixed(2)}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>VOLUME</div>
+            <div>
+              {(stockInfo.volume / 1000000).toFixed(2)}
+              M
+            </div>
+          </td>
+          <td>
+            <div>AVG. VOLUME</div>
+            <div>
+              {(stockInfo.avgVolume / 1000000).toFixed(2)}
+              M
+            </div>
+          </td>
+          <td>
+            <div>MARKET CAP.</div>
+            <div>
+              {(stockInfo.marketCap / 1000000000).toFixed(2)}
+              B
+            </div>
+          </td>
+          <td>
+            <div>P/E RATIO</div>
+            <div>{stockInfo.pe.toFixed(2)}</div>
+          </td>
+          <td>
+            <div>PREV. CLOSE</div>
+            <div>
+              &#36;
+              {stockInfo.previousClose}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 );
 
 StockInfoComponent.propTypes = {
   stockInfo: PropTypes.shape({
+    symbol: PropTypes.string.isRequired,
     open: PropTypes.number.isRequired,
     dayHigh: PropTypes.number.isRequired,
     dayLow: PropTypes.number.isRequired,

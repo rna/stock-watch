@@ -47,14 +47,9 @@ const StockPageContainer = ({
     <div className="sub-container">
       <div className="left-sub-container">
         {customCompanyInfoComponent}
-        <table>
-          <thead>
-            <tr>
-              <th colSpan="5">Statistics</th>
-            </tr>
-          </thead>
-          {customStockInfoComponent}
-        </table>
+
+        {customStockInfoComponent}
+
       </div>
       <div className="right-sub-container">
         {customStockNewsComponent}

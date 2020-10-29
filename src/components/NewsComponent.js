@@ -11,8 +11,6 @@ const NewsComponent = ({ news }) => (
         <h4>{news.title}</h4>
       </a>
       <p>
-        Source:
-        { }
         {news.site}
       </p>
     </div>

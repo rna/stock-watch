@@ -17,7 +17,43 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Stock List Table styles*/
+/* Stock Info Styles */
+
+.stock-info {
+  margin: 50px 0;
+}
+
+.stock-info table,
+.stock-info tr {
+  border: 1px solid grey;
+}
+
+.stock-info table {
+  width: 100%;
+  height: 200px;
+  text-align: left;
+}
+
+.stock-info td {
+  padding-left: 15px;
+}
+
+.stock-info th {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.stock-info tr {
+  outline: thin solid grey;
+}
+
+.stock-info td div:nth-child(even) {
+  font-size: 18px;
+  font-weight: bolder;
+  padding-top: 15px;
+}
+
+/* Stock List Table styles */
 
 .stock-list {
   border-collapse: collapse;
@@ -154,6 +190,3 @@ input {
 .company-profile td:nth-child(odd) {
   font-weight: bold;
 }
-
-/* Stock Statistics */
-
