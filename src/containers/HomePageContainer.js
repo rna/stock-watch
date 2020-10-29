@@ -30,13 +30,14 @@ const HomePageContainer = ({
   return (
     <div>
       <SearchComponent value={search} handleSearch={handleSearch} />
-      <table>
+      <table className="stock-list">
         <thead>
           <tr>
             <th>SYMBOL</th>
             <th>COMPANY NAME</th>
             <th>PRICE (USD)</th>
             <th>MARKET CAP.(Billions)</th>
+            <th>Action(s)</th>
           </tr>
         </thead>
         <tbody>
