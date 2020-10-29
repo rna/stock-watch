@@ -75,3 +75,37 @@ html {
   height: 100%;
   float: right;
 }
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.search-input {
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 40px;
+  width: 100%;
+  padding: 3px 35px;
+  background-color: #f5f5f5;
+  outline: 0;
+}
+
+input {
+  font-size: 18px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 32px;
+}
+
+.search-input:hover,
+.search-input:focus {
+  border: 1px solid #009688;
+  background-color: white;
+}
