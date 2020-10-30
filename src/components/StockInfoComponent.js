@@ -75,7 +75,7 @@ const StockInfoComponent = ({ stockInfo }) => (
           </td>
           <td>
             <div>P/E RATIO</div>
-            <div>{stockInfo.pe.toFixed(2)}</div>
+            <div>{stockInfo.pe ? stockInfo.pe.toFixed(2) : 'NIL'}</div>
           </td>
           <td>
             <div>PREV. CLOSE</div>
