@@ -1,5 +1,5 @@
 const initialState = {
-  stocks: [],
+  stocks: '',
 };
 
 const stocks = (state = initialState, action) => {
