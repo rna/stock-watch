@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import StockInfoComponent from '../components/StockInfoComponent';
 import NewsComponent from '../components/NewsComponent';
 import CompanyInfoComponent from '../components/CompanyInfoComponent';
-import { fetchStockInfo, fetchStockNews, fetchCompanyInfo } from '../actions/index';
+import getCompanyInfoRequest from '../api/getCompanyInfoRequest';
+import { fetchStockInfo, fetchStockNews } from '../actions/index';
 
 const StockPageContainer = ({
   stockInfo,
@@ -12,12 +14,14 @@ const StockPageContainer = ({
   stockNews,
   fetchStockNews,
   companyInfo,
-  fetchCompanyInfo,
+  getCompanyInfoRequest,
 }) => {
+  const { symbol } = useParams();
+
   useEffect(() => {
     fetchStockInfo();
     fetchStockNews();
-    fetchCompanyInfo();
+    getCompanyInfoRequest(symbol);
   }, []);
 
   let customStockInfoComponent;
@@ -67,7 +71,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchStockInfo,
   fetchStockNews,
-  fetchCompanyInfo,
+  getCompanyInfoRequest,
 };
 
 StockPageContainer.propTypes = {
@@ -76,7 +80,7 @@ StockPageContainer.propTypes = {
   stockNews: PropTypes.instanceOf(Array).isRequired,
   fetchStockNews: PropTypes.func.isRequired,
   companyInfo: PropTypes.instanceOf(Array).isRequired,
-  fetchCompanyInfo: PropTypes.func.isRequired,
+  getCompanyInfoRequest: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockPageContainer);
