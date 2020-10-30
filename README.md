@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Stock Watch App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A web application built on React and Redux libraries to montior stocks and related stock information and news.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Built With](#built-with)
+- [Live Demo](#live-demo)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Author](#author)
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Allows user to monitor the stock prices.(Listed only few technology stocks, Feature for adding new stocks is in our roadmap.)
+- User can search the list of stocks with live search feature.
+- User can able to view the trending news of the market.
+- Allows user can delete the selected stock.
+- User can also view the company profile by clicking on the symbol.
+- Allows user can read the selected stock related news headlines with its source mentioned as a link.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshot
 
-### `yarn test`
+![Home page](./homepage.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Stock page](./stockpage.png)
 
-### `yarn build`
+## Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- Redux
+- React-Create-App
+- npm
+- CSS
+- ES6
+- Heroku
+- [Financial Modeling Prep API](https://financialmodelingprep.com/developer/docs)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Live Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Live Demo Link](https://rna-stock-watch.herokuapp.com/)
 
-### `yarn eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To get a local copy up and running, follow these simple example steps.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- NodeJs
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- ### Setup -->
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Clone the repo with:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+git clone https://github.com/rna/stock-watch
+```
 
-### Code Splitting
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Run `npm install` to install all dependencies
 
-### Analyzing the Bundle Size
+2. Run `npm start` to start the local server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Roadmap
 
-### Making a Progressive Web App
+- Addition of New stocks
+- User Login and save their watchlist
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- ### Deployment -->
 
-### Advanced Configuration
+### Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👤 **Ramesh Naidu Allu**
 
-### Deployment
+- Github: [@rna](https://github.com/rna)
+- Twitter: [@rnadev](https://twitter.com/rnadev)
+- Linkedin: [Linkedin](https://linkedin.com/in/ramesh-naidu)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🤝 Contributing
 
-### `yarn build` fails to minify
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
+- [Financial Modeling Prep API](https://financialmodelingprep.com/developer/docs)
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
