@@ -6,11 +6,12 @@ import StockInfoComponent from '../components/StockInfoComponent';
 import NewsComponent from '../components/NewsComponent';
 import CompanyInfoComponent from '../components/CompanyInfoComponent';
 import getCompanyInfoRequest from '../api/getCompanyInfoRequest';
-import { fetchStockInfo, fetchStockNews } from '../actions/index';
+import getStockInfoRequest from '../api/getStockInfoRequest';
+import { fetchStockNews } from '../actions/index';
 
 const StockPageContainer = ({
   stockInfo,
-  fetchStockInfo,
+  getStockInfoRequest,
   stockNews,
   fetchStockNews,
   companyInfo,
@@ -19,7 +20,7 @@ const StockPageContainer = ({
   const { symbol } = useParams();
 
   useEffect(() => {
-    fetchStockInfo();
+    getStockInfoRequest(symbol);
     fetchStockNews();
     getCompanyInfoRequest(symbol);
   }, []);
@@ -69,14 +70,14 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchStockInfo,
+  getStockInfoRequest,
   fetchStockNews,
   getCompanyInfoRequest,
 };
 
 StockPageContainer.propTypes = {
   stockInfo: PropTypes.instanceOf(Array).isRequired,
-  fetchStockInfo: PropTypes.func.isRequired,
+  getStockInfoRequest: PropTypes.func.isRequired,
   stockNews: PropTypes.instanceOf(Array).isRequired,
   fetchStockNews: PropTypes.func.isRequired,
   companyInfo: PropTypes.instanceOf(Array).isRequired,
