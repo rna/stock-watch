@@ -1,5 +1,3 @@
-import demoStockNews from '../api/demoStockNews';
-
 export const fetchStocks = data => ({
   type: 'FETCH_STOCKS',
   payload: data,
@@ -20,9 +18,9 @@ export const fetchStockInfo = data => ({
   payload: data,
 });
 
-export const fetchStockNews = () => ({
+export const fetchStockNews = data => ({
   type: 'FETCH_STOCK_NEWS',
-  payload: demoStockNews,
+  payload: data,
 });
 
 export const fetchCompanyInfo = data => ({
