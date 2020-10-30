@@ -57,6 +57,7 @@ const StockPageContainer = ({
 
       </div>
       <div className="right-sub-container">
+        <h1 className="side-heading">Related News</h1>
         {customStockNewsComponent}
       </div>
     </div>

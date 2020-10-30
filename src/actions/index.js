@@ -3,6 +3,11 @@ export const fetchStocks = data => ({
   payload: data,
 });
 
+export const fetchTrendingNews = data => ({
+  type: 'FETCH_TRENDING_NEWS',
+  payload: data,
+});
+
 export const searchStock = value => ({
   type: 'SEARCH_STOCK',
   payload: value,

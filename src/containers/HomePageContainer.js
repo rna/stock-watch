@@ -5,6 +5,8 @@ import StockComponent from '../components/StockComponent';
 import getStocksRequest from '../api/getStocksRequest';
 import { searchStock, deleteStock } from '../actions/index';
 import SearchComponent from '../components/SearchComponent';
+import NewsComponent from '../components/NewsComponent';
+import getTrendingNewsRequest from '../api/getTrendingNewsRequest';
 
 const HomePageContainer = ({
   getStocksRequest,
@@ -12,9 +14,12 @@ const HomePageContainer = ({
   searchStock,
   search,
   deleteStock,
+  trending,
+  getTrendingNewsRequest,
 }) => {
   useEffect(() => {
     getStocksRequest();
+    getTrendingNewsRequest();
   }, [getStocksRequest]);
 
   let filtered = stocks;
@@ -33,6 +38,8 @@ const HomePageContainer = ({
   };
 
   let customStocksComponent;
+  let customTrendingNewsComponent;
+
   if (stocks) {
     customStocksComponent = filtered.map(s => (
       <StockComponent
@@ -43,6 +50,14 @@ const HomePageContainer = ({
     ));
   } else {
     customStocksComponent = <div className="loader" />;
+  }
+
+  if (trending) {
+    customTrendingNewsComponent = trending.map(news => (
+      <NewsComponent key={trending.indexOf(news)} news={news} />
+    ));
+  } else {
+    customTrendingNewsComponent = <div className="loader" />;
   }
 
   return (
@@ -63,7 +78,8 @@ const HomePageContainer = ({
         </table>
       </div>
       <div className="right-sub-container">
-        <h1>News Section</h1>
+        <h1 className="side-heading">Trending News</h1>
+        {customTrendingNewsComponent}
       </div>
     </div>
   );
@@ -72,20 +88,24 @@ const HomePageContainer = ({
 const mapStateToProps = state => ({
   stocks: state.stocks.stocks,
   search: state.search,
+  trending: state.stocks.trending,
 });
 
 const mapDispatchToProps = {
   getStocksRequest,
   searchStock,
   deleteStock,
+  getTrendingNewsRequest,
 };
 
 HomePageContainer.propTypes = {
   stocks: PropTypes.instanceOf(Array).isRequired,
+  trending: PropTypes.instanceOf(Array).isRequired,
   getStocksRequest: PropTypes.func.isRequired,
   searchStock: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   deleteStock: PropTypes.func.isRequired,
+  getTrendingNewsRequest: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePageContainer);
