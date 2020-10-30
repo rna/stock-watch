@@ -26,7 +26,7 @@ const StockPageContainer = ({
   if (stockInfo) {
     customStockInfoComponent = <StockInfoComponent stockInfo={stockInfo[0]} />;
   } else {
-    customStockInfoComponent = null;
+    customStockInfoComponent = <div className="loader" />;
   }
 
   if (stockNews) {
@@ -34,13 +34,13 @@ const StockPageContainer = ({
       <NewsComponent key={stockNews.indexOf(news)} news={news} />
     ));
   } else {
-    customStockNewsComponent = null;
+    customStockNewsComponent = <div className="loader" />;
   }
 
   if (companyInfo) {
     customCompanyInfoComponent = <CompanyInfoComponent profile={companyInfo[0]} />;
   } else {
-    customCompanyInfoComponent = null;
+    customCompanyInfoComponent = <div className="loader" />;
   }
 
   return (

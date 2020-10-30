@@ -1,11 +1,11 @@
-import demoStocks from '../api/demoStocks';
+// import demoStocks from '../api/demoStocks';
 import demoStockInfo from '../api/demoStockInfo';
 import demoStockNews from '../api/demoStockNews';
 import demoCompanyInfo from '../api/demoCompanyInfo';
 
-export const fetchStocks = () => ({
+export const fetchStocks = data => ({
   type: 'FETCH_STOCKS',
-  payload: demoStocks,
+  payload: data,
 });
 
 export const searchStock = value => ({

@@ -2,15 +2,20 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import StockComponent from '../components/StockComponent';
-import { fetchStocks, searchStock, deleteStock } from '../actions/index';
+import getStocksRequest from '../api/getStocksRequest';
+import { searchStock, deleteStock } from '../actions/index';
 import SearchComponent from '../components/SearchComponent';
 
 const HomePageContainer = ({
-  stocks, fetchStocks, searchStock, search, deleteStock,
+  getStocksRequest,
+  stocks,
+  searchStock,
+  search,
+  deleteStock,
 }) => {
   useEffect(() => {
-    fetchStocks();
-  }, [fetchStocks]);
+    getStocksRequest();
+  }, [getStocksRequest]);
 
   let filtered = stocks;
   if (search === '') {
@@ -27,6 +32,19 @@ const HomePageContainer = ({
     deleteStock(stock);
   };
 
+  let customStocksComponent;
+  if (stocks) {
+    customStocksComponent = filtered.map(s => (
+      <StockComponent
+        key={filtered.indexOf(s)}
+        stock={s}
+        handleDelete={handleDelete}
+      />
+    ));
+  } else {
+    customStocksComponent = <div className="loader" />;
+  }
+
   return (
     <div className="sub-container">
       <div className="left-sub-container">
@@ -41,11 +59,7 @@ const HomePageContainer = ({
               <th>Action(s)</th>
             </tr>
           </thead>
-          <tbody>
-            {filtered.map(s => (
-              <StockComponent key={filtered.indexOf(s)} stock={s} handleDelete={handleDelete} />
-            ))}
-          </tbody>
+          <tbody>{customStocksComponent}</tbody>
         </table>
       </div>
       <div className="right-sub-container">
@@ -61,14 +75,14 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchStocks,
+  getStocksRequest,
   searchStock,
   deleteStock,
 };
 
 HomePageContainer.propTypes = {
   stocks: PropTypes.instanceOf(Array).isRequired,
-  fetchStocks: PropTypes.func.isRequired,
+  getStocksRequest: PropTypes.func.isRequired,
   searchStock: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   deleteStock: PropTypes.func.isRequired,
