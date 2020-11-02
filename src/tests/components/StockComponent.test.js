@@ -13,46 +13,30 @@ const stock = {
 const handleDelete = () => null;
 
 describe('Test StockComponent', () => {
-  it('should render the stock symbol', () => {
+  it('should render the stock', () => {
     const { getByText } = render(
       <BrowserRouter>
-        <StockComponent stock={stock} handleDelete={handleDelete} />
+        <table>
+          <tbody>
+            <StockComponent stock={stock} handleDelete={handleDelete} />
+          </tbody>
+        </table>
       </BrowserRouter>,
     );
     expect(getByText(/AAPL/)).toBeInTheDocument();
-  });
-
-  it('should render the stock companyName', () => {
-    const { getByText } = render(
-      <BrowserRouter>
-        <StockComponent stock={stock} handleDelete={handleDelete} />
-      </BrowserRouter>,
-    );
     expect(getByText(/Apple/)).toBeInTheDocument();
-  });
-
-  it('should render the stock price', () => {
-    const { getByText } = render(
-      <BrowserRouter>
-        <StockComponent stock={stock} handleDelete={handleDelete} />
-      </BrowserRouter>,
-    );
     expect(getByText(/112/)).toBeInTheDocument();
-  });
-
-  it('should render the marketCap', () => {
-    const { getByText } = render(
-      <BrowserRouter>
-        <StockComponent stock={stock} handleDelete={handleDelete} />
-      </BrowserRouter>,
-    );
     expect(getByText(/1996.00/)).toBeInTheDocument();
   });
 
   it('should render the button in the dom', () => {
     const { queryAllByTestId } = render(
       <BrowserRouter>
-        <StockComponent stock={stock} handleDelete={handleDelete} />
+        <table>
+          <tbody>
+            <StockComponent stock={stock} handleDelete={handleDelete} />
+          </tbody>
+        </table>
       </BrowserRouter>,
     );
     expect(queryAllByTestId('button')).toBeTruthy();
