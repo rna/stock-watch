@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import StockComponent from '../components/StockComponent';
+import StocksListComponent from '../components/StocksListComponent';
 import getStocksRequest from '../api/getStocksRequest';
 import { searchStock, deleteStock } from '../actions/index';
 import SearchComponent from '../components/SearchComponent';
@@ -41,13 +41,7 @@ const HomePageContainer = ({
   let customTrendingNewsComponent;
 
   if (stocks) {
-    customStocksComponent = filtered.map(s => (
-      <StockComponent
-        key={filtered.indexOf(s)}
-        stock={s}
-        handleDelete={handleDelete}
-      />
-    ));
+    customStocksComponent = <StocksListComponent filtered={filtered} handleDelete={handleDelete} />;
   } else {
     customStocksComponent = <div className="loader" />;
   }
@@ -64,18 +58,7 @@ const HomePageContainer = ({
     <div className="sub-container">
       <div className="left-sub-container">
         <SearchComponent value={search} handleSearch={handleSearch} />
-        <table className="stock-list">
-          <thead>
-            <tr>
-              <th>SYMBOL</th>
-              <th>COMPANY NAME</th>
-              <th>PRICE (USD)</th>
-              <th>MARKET CAP.(Billions)</th>
-              <th>Action(s)</th>
-            </tr>
-          </thead>
-          <tbody>{customStocksComponent}</tbody>
-        </table>
+        {customStocksComponent}
       </div>
       <div className="right-sub-container">
         <h1 className="side-heading">Trending News</h1>
