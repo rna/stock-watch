@@ -77,12 +77,18 @@ const mapDispatchToProps = {
 };
 
 StockPageContainer.propTypes = {
-  stockInfo: PropTypes.instanceOf(Array).isRequired,
+  stockInfo: PropTypes.instanceOf(Array),
   getStockInfoRequest: PropTypes.func.isRequired,
-  stockNews: PropTypes.instanceOf(Array).isRequired,
+  stockNews: PropTypes.instanceOf(Array),
   getStockNewsRequest: PropTypes.func.isRequired,
-  companyInfo: PropTypes.instanceOf(Array).isRequired,
+  companyInfo: PropTypes.instanceOf(Array),
   getCompanyInfoRequest: PropTypes.func.isRequired,
+};
+
+StockPageContainer.defaultProps = {
+  stockInfo: undefined,
+  stockNews: undefined,
+  companyInfo: undefined,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockPageContainer);
