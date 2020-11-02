@@ -11,7 +11,7 @@ const profile = {
   ceo: 'Timothy Cook',
   industry: 'technology',
   website: 'www.apple.com',
-  fullTimeEmployees: 14652,
+  fullTimeEmployees: '14652',
   address: 'Apple Park',
   city: 'CS',
   state: 'California',
