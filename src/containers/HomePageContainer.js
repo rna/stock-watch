@@ -99,8 +99,14 @@ const mapDispatchToProps = {
 };
 
 HomePageContainer.propTypes = {
-  stocks: PropTypes.instanceOf(Array).isRequired,
-  trending: PropTypes.instanceOf(Array).isRequired,
+  stocks: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Array),
+  ]).isRequired,
+  trending: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Array),
+  ]).isRequired,
   getStocksRequest: PropTypes.func.isRequired,
   searchStock: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
