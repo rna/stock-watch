@@ -1,0 +1,246 @@
+body,
+html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family:
+    -apple-system,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.back-to-home {
+  text-align: right;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+/* News Item styles */
+
+.news-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-item img {
+  width: 150px;
+  height: auto;
+  padding-right: 10px;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.news-item p {
+  font-size: 14px;
+  font-weight: bold;
+  color: grey;
+}
+
+/* Stock Info Styles */
+
+.stock-info {
+  margin: 50px 0;
+}
+
+.stock-info table,
+.stock-info tr {
+  border: 1px solid grey;
+}
+
+.stock-info table {
+  width: 100%;
+  height: 200px;
+  text-align: left;
+}
+
+.stock-info td {
+  padding-left: 15px;
+}
+
+.stock-info th {
+  padding: 10px 0;
+  font-size: 22px;
+  background-color: #5ac58e;
+  color: white;
+}
+
+.stock-info tr {
+  outline: thin solid grey;
+}
+
+.stock-info td div:nth-child(even) {
+  font-size: 18px;
+  font-weight: bolder;
+  padding-top: 15px;
+}
+
+/* Stock List Table styles */
+
+.stock-list {
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+.stock-list td,
+.stock-list th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.stock-list th {
+  padding: 12px;
+  text-align: left;
+  background-color: #5ac58e;
+  color: white;
+}
+
+.stock-list tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.stock-list tr:hover {
+  background-color: #ddd;
+}
+
+/* Application section styles */
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.left-container {
+  width: 18vw;
+  height: 100%;
+  float: left;
+  position: fixed;
+  background-color: whitesmoke;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: gray;
+  display: block;
+}
+
+.sidenav a:nth-child(3) {
+  background-color: #5ac58e;
+  color: white;
+}
+
+.right-container {
+  width: 80vw;
+  height: 100%;
+  float: right;
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+}
+
+.left-sub-container {
+  width: 48vw;
+  height: 100%;
+  float: left;
+  margin: 10px;
+}
+
+.right-sub-container {
+  width: 28vw;
+  height: 100%;
+  float: right;
+}
+
+/* Search Bar Styles */
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.search-input {
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 40px;
+  width: 100%;
+  padding: 3px 35px;
+  background-color: #f5f5f5;
+  outline: 0;
+}
+
+input {
+  font-size: 18px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 32px;
+}
+
+.search-input:hover,
+.search-input:focus {
+  border: 1px solid #009688;
+  background-color: white;
+}
+
+/* Company Profile */
+
+.company-profile {
+  padding-right: 10px;
+}
+
+.company-profile td {
+  text-align: justify;
+}
+
+.company-profile td:nth-child(odd) {
+  font-weight: bold;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
