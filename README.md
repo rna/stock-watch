@@ -67,6 +67,10 @@ git clone https://github.com/rna/stock-watch
 
 2. Run `npm start` to start the local server
 
+### Testing
+
+1. Run `npm test a` to test
+
 ## Roadmap
 
 - Addition of New stocks
